@@ -1,3 +1,52 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="movement_forward" id="10" x="83" y="38"></block>
+  <block type="controls_whileUntil" id="35" inline="false" x="47" y="13">
+    <field name="MODE">UNTIL</field>
+    <value name="NUMBER">
+      <block type="logic_compare" id="42" inline="true">
+        <field name="OP">LT</field>
+        <value name="A">
+          <block type="sensor_object" id="49">
+            <field name="OBJECT">LEFTFRONT</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="56">
+            <field name="NUM">20</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="movement_forward" id="10"></block>
+    </statement>
+    <next>
+      <block type="movement_right" id="75">
+        <next>
+          <block type="robot_delay" id="77" inline="true">
+            <value name="DELAY">
+              <block type="math_number" id="90">
+                <field name="NUM">1000</field>
+              </block>
+            </value>
+            <next>
+              <block type="movement_forward" id="100">
+                <next>
+                  <block type="robot_delay" id="103" inline="true">
+                    <value name="DELAY">
+                      <block type="math_number" id="110">
+                        <field name="NUM">4000</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="movement_left" id="120"></block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
 </xml>
