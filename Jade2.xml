@@ -47,9 +47,13 @@
                               </block>
                             </value>
                             <next>
-                              <block type="movement_stutter" id="158">
+                              <block type="movement_forward" id="168">
                                 <next>
-                                  <block type="movement_stop" id="139"></block>
+                                  <block type="movement_stutter" id="158">
+                                    <next>
+                                      <block type="movement_stop" id="139"></block>
+                                    </next>
+                                  </block>
                                 </next>
                               </block>
                             </next>
